@@ -1,0 +1,69 @@
+// Problem: A. Collatz Conjecture
+// Contest: Codeforces - Codeforces Round 1047 (Div. 3)
+// URL: https://codeforces.com/contest/2137/problem/A
+// Memory Limit: 256 MB
+// Time Limit: 1000 ms
+
+/*-----------------------------------------------------------त्वदीयं वस्तु गोविन्द: तुभ्यमेव समर्पये---------------------------------------------------*/ 
+#include <bits/stdc++.h>
+using namespace std;
+
+// Type aliases
+using ll = long long;
+using ull = unsigned long long;
+using lld = long double;
+
+using vi = vector<int>;
+using vvi = vector<vector<int>>;
+using vll = vector<ll>;
+using vvll = vector<vector<ll>>;
+using vc = vector<char>;
+using vvc = vector<vector<char>>;
+using vs = vector<string>;
+using pi = pair<int, int>;
+using vpi = vector<pi>;
+using si = set<int>;
+using spi = set<pi>;
+using mpii = map<int, int>;
+using mpci = map<char, int>; 
+
+// Macros
+#define take(v) for (auto &i : v) cin >> i;
+#define f(i, x, y) for (int i = x; i < y; i++)
+#define pb push_back
+#define ff first
+#define ss second
+#define sortv(x) sort(x.begin(), x.end())
+#define sortd(x) sort(x.begin(), x.end(), greater<>())
+#define mod 1000000007
+#define setbits(x) __builtin_popcount(x)
+#define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
+
+void solve() {
+    int k, x;
+        cin >> k >> x;
+
+     
+        f (i,0,k) {
+            if ((x - 1) % 3 == 0 && ((x - 1) / 3) % 2 == 1) {
+                x = (x - 1) / 3;  
+            } else {
+                x = x * 2;        
+            }
+        }
+
+        cout << x << "\n";
+    }
+
+
+
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    int t;
+    cin >> t;
+    while (t--) solve();
+}
