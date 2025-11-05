@@ -12,18 +12,16 @@ int main() {
     ll t;
     cin>>t;
     while(t--){
-        string s;
-        cin >> s;
-
-        ll count_1 = 0 ,count_0 = 0;
-
-        for (auto &st :s) {
-            if(st == '1') count_1 ++;
-            else count_0 ++;
+        ll n;
+        cin>>n;
+        if(n&1 || n<4)cout<<-1<<endl;
+        else{
+            ll minm =0,maxm=0;
+            minm+=(n/6);
+            if(n%6!=0){minm++;}
+            maxm+=(n/4);
+            cout<<minm<<" "<<maxm<<endl;
         }
-        ll minm = min(count_1,count_0);
-        
-        cout << ((minm&1)? "DA":"NET")<<endl;
     }
     
     return 0;

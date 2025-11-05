@@ -12,18 +12,21 @@ int main() {
     ll t;
     cin>>t;
     while(t--){
-        string s;
-        cin >> s;
+        ll n,k;
+        cin>>n>>k;
+        vll a(n*k);
+        for (auto &at :a ) {
+            cin>>at;
+        }   
+        ll mediumsum=0;
 
-        ll count_1 = 0 ,count_0 = 0;
-
-        for (auto &st :s) {
-            if(st == '1') count_1 ++;
-            else count_0 ++;
+        int i = (n*k)-1;
+        while(k--){
+            i-=(n/2);
+            mediumsum+=a[i];
+            i--;
         }
-        ll minm = min(count_1,count_0);
-        
-        cout << ((minm&1)? "DA":"NET")<<endl;
+        cout << mediumsum << endl;
     }
     
     return 0;

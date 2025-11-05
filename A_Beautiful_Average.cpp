@@ -12,18 +12,20 @@ int main() {
     ll t;
     cin>>t;
     while(t--){
-        string s;
-        cin >> s;
-
-        ll count_1 = 0 ,count_0 = 0;
-
-        for (auto &st :s) {
-            if(st == '1') count_1 ++;
-            else count_0 ++;
+        ll n;
+        cin>>n;
+        vll a(n);
+        for (auto &at :a) {
+            cin>>at;
         }
-        ll minm = min(count_1,count_0);
+        ll maxm=0;
+        for (int i = 0; i < n; i++)
+        {
+            maxm=max(maxm,a[i]);
+        }
+        cout<<maxm<<endl;
         
-        cout << ((minm&1)? "DA":"NET")<<endl;
+
     }
     
     return 0;

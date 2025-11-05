@@ -12,18 +12,14 @@ int main() {
     ll t;
     cin>>t;
     while(t--){
-        string s;
-        cin >> s;
-
-        ll count_1 = 0 ,count_0 = 0;
-
-        for (auto &st :s) {
-            if(st == '1') count_1 ++;
-            else count_0 ++;
+        ll a,b,c,d;
+        cin>>a>>b>>c>>d;
+        if(a == b && b == c && c == d && d == a){
+            cout<<"YES"<<endl;
         }
-        ll minm = min(count_1,count_0);
-        
-        cout << ((minm&1)? "DA":"NET")<<endl;
+        else {
+            cout<<"NO"<<endl;
+        }
     }
     
     return 0;

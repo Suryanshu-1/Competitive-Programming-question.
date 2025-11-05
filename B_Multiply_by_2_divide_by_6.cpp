@@ -11,20 +11,27 @@ int main() {
     while(t--){
         ll n;
         cin>>n;
-        if(n%6==1 || n%6==3 || !(n/6)){
-            int count=0;
-            while(n>=6){
-                n=n/6;
-                count++;
-            }
-            if(n==3){
-                count+=2;
-            }
-            cout<<count<<endl;
+        
+        ll count2 = 0,count3 = 0;
+        
+        while(n>0 && n%3 == 0){
+            count3 ++;
+            n /= 3;
         }
+
+        while(n > 0 && n%2 == 0){
+            count2 ++;
+            n /= 2;
+        }
+        
+        if(n > 1 || count2 > count3){
+            cout << -1 <<endl;
+        }
+
         else{
-            cout<<-1<<endl;
+            cout << count2 + 2*(count3 - count2) <<endl;
         }
+
     }
     
     return 0;

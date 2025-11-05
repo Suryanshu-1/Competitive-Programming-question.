@@ -12,18 +12,15 @@ int main() {
     ll t;
     cin>>t;
     while(t--){
-        string s;
-        cin >> s;
-
-        ll count_1 = 0 ,count_0 = 0;
-
-        for (auto &st :s) {
-            if(st == '1') count_1 ++;
-            else count_0 ++;
-        }
-        ll minm = min(count_1,count_0);
+        ll a,b;
+        cin>>a>>b;
         
-        cout << ((minm&1)? "DA":"NET")<<endl;
+        if(a!=b){
+            cout<<a+b<<endl;
+        }
+        else{
+            cout<<a+b-1<<endl;
+        }
     }
     
     return 0;

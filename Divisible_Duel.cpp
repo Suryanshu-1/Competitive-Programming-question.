@@ -12,18 +12,17 @@ int main() {
     ll t;
     cin>>t;
     while(t--){
-        string s;
-        cin >> s;
-
-        ll count_1 = 0 ,count_0 = 0;
-
-        for (auto &st :s) {
-            if(st == '1') count_1 ++;
-            else count_0 ++;
+        ll l,r;
+        cin>>l>>r;
+        ll i=l;
+        ll sumodd=0,sumeven=0;
+        while(i<=r){
+            if(i&1){sumodd+=i;}
+            else{sumeven+=i;}
+            i+=l;
         }
-        ll minm = min(count_1,count_0);
-        
-        cout << ((minm&1)? "DA":"NET")<<endl;
+        if(sumeven>=sumodd){cout<<"YES"<<endl;}
+        else{cout<<"NO"<<endl;}
     }
     
     return 0;
